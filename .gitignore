@@ -1,0 +1,9 @@
+/*.java
+/pom.xml
+/*.7z
+/*/.gradle
+/*/.idea
+/*/build
+/*/gradle
+/*/gradlew
+/*/gradlew.bat
