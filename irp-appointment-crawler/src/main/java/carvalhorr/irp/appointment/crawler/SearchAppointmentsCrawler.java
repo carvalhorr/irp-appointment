@@ -27,7 +27,6 @@ public class SearchAppointmentsCrawler {
 	}
 	
 	public void openWebsite() throws InterruptedException {
-		driver.close();
 		driver.get(inisWebsite);
 		fillForm();
 	}

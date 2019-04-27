@@ -1,5 +1,6 @@
 package carvalhorr.irp.appointment.plugins;
 
+import carvalhorr.irp.appointment.config.ConfigProvider;
 import carvalhorr.irp.appointment.shared.plugins.IAppointmentsHandler;
 
 import java.io.File;
@@ -14,9 +15,9 @@ import java.util.ServiceLoader;
 
 public class Plugins {
 
-    private ServiceLoader<IAppointmentsHandler> loader;
-
+    public static final String JAR_EXTENSION = ".jar";
     private static final Plugins instance = new Plugins();
+    private ServiceLoader<IAppointmentsHandler> loader;
 
     static {
         instance.loadPlugins();
@@ -34,7 +35,8 @@ public class Plugins {
     }
 
     private void loadPlugins() {
-        File[] pluginFiles = new File("plugins").listFiles((File dir, String name) -> name.endsWith(".jar"));
+        File[] pluginFiles = new File(ConfigProvider.getPluginsPath())
+                .listFiles((File dir, String name) -> name.endsWith(JAR_EXTENSION));
         List<URL> urlsList = new ArrayList<>();
         for (File file : pluginFiles) {
             try {

@@ -8,17 +8,20 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Logger;
 
 public class AppointmentDataExtractor {
 
     public static final String NO_APPOINTMENT_S_ARE_CURRENTLY_AVAILABLE = "No appointment(s) are currently available";
     public static final String APPOINTMENTS_SELECTOR = "#dvAppOptions table";
-    public static final String BOOK_THIS = "Book this";
+    public static final String BOOK_THIS = "Book This";
     public static final String EMPTY_STRING = "";
-    public static final String DATE_TIME_FORMAT = "MMM dd - hh:mm";
+    public static final String DATE_TIME_FORMAT = "dd MMMM yyyy - kk:mm";
 
-    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DATE_TIME_FORMAT);
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+            .ofPattern(DATE_TIME_FORMAT)
+            .withLocale(Locale.US);
 
     public List<LocalDateTime> extractAppointments(String html) {
         Document document = Jsoup.parse(html);

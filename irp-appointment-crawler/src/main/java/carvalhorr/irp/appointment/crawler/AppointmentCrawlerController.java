@@ -25,7 +25,7 @@ public class AppointmentCrawlerController {
         keepSearching = true;
     }
 
-    public void start() throws InterruptedException {
+    public void beginCrawling() throws InterruptedException {
         crawler.openWebsite();
         while (keepSearching) {
             List<LocalDateTime> appointments = crawler.search();
@@ -34,7 +34,7 @@ public class AppointmentCrawlerController {
         }
     }
 
-    public void end() {
+    public void endCrawling() {
         keepSearching = false;
     }
 
