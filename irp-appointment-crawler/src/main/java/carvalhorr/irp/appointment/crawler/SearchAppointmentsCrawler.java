@@ -40,23 +40,23 @@ public class SearchAppointmentsCrawler {
 	}
 
 	private void fillForm() throws InterruptedException {
-		selectCategory("All");
-		selectSubcategory("All");
-		confirmPreviousGnib("Yes");
-		typeGnibNumber("769181");
-		selectGnibExpirationDate("07/08/2019");
-		confirmStatementsAreTrue();
-		typeGivenName("Rodrigo");
-		typeSurname("Rodrigues de Carvalho");
-		selectDateOfBirth("22/05/1980");
-		selectNationality("Brazil");
-		typeEmail("carvalhorr@gmail.com");
-		typeEmailConfirmation("carvalhorr@gmail.com");
-		confirmFamilyApplication("No");
-		confirmHavePassport("Yes");
-		typePassportNumber("FM282756");
-		clickLookForAppointment();
-		selectSearchMode("closest to today");
+        selectCategory("All");
+        selectSubcategory("All");
+        confirmPreviousGnib("Yes");
+        typeGnibNumber("");
+        selectGnibExpirationDate("07/08/2019");
+        confirmStatementsAreTrue();
+        typeGivenName("");
+        typeSurname("");
+        selectDateOfBirth("");
+        selectNationality("");
+        typeEmail("");
+        typeEmailConfirmation("");
+        confirmFamilyApplication("No");
+        confirmHavePassport("Yes");
+        typePassportNumber("");
+        clickLookForAppointment();
+        selectSearchMode("closest to today");
 	}
 
 	private void clickSearchAppointments() throws InterruptedException {
